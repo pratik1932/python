@@ -1,0 +1,206 @@
+# strings methods
+# strings are immutable
+# all string methods returns new string,they don't change original string
+
+
+# 1) upper():returns given string in uppercase letters.
+ str='message'
+ print(str.upper())
+# o/p : MESSAGE
+#
+# # 2) lower():returns given string in lowercase letters.
+ str='MESSAGE'
+ print(str.lower())
+# # o/p:message
+
+# 3) islower():returns true if all characters in string are in lowrcase oterwise returns false
+ name='pratik'
+ print(name.islower())
+ # o/p:True
+ name="pRatik"
+ print(name.islower())
+ # o/p:False
+
+# 4)isupper():returns true if all characters in the string are in uppercase otherwise returns false
+ name="PRATIK"
+ print(name.isupper())
+# o/p:True
+ name="PRAtIK"
+ print(name.isupper())
+ # o/p:False
+
+# 5) find():returns the index of first occurence of specified value.If value is not found it returns -1.
+#  syntax: string.find(value,start,end)
+#   parameters:
+# start:specifies index from where to start the search .deffault is 0.
+#  end:specifies length where to end the search.default is end of string .
+ str="apples are red"
+ print(str.find("a"))
+# # o/p: 0
+print(str.find("a",1))
+ # o/p:7
+ print(str.find("red"))
+ # o/p:11
+ print(str.find("blue"))
+# o/p:-1
+
+
+# 6) index():returns the index of first occurence of specified value just like find  but the difference is
+# If value is not  found  it wiil raise an error unlike find.
+# parameters same as find().
+ str="apples are red"
+ print(str.index("a"))
+ # o/p: 0
+ print(str.index("a",1))
+  # o/p:7
+ print(str.index("red"))
+ # o/p:11
+ print(str.index("blue"))
+ # o/p:ValueError: substring not found
+
+# 7) title():converts first characer in each word in uppercase and rest charaers in lowercase. if there is number or special
+# symbol in string ,the characer after that will be converted in uppercase.
+ str="appples are red"
+ print(str.title())
+ o/p:Appples Are Red
+ str="pratik@gmail"
+ print(str.title())
+# o/p:Pratik@Gmail
+
+# 8) capitalize():converts first characrer of string in uppercase and rest of the charactrs in lowercase
+ str="coding is FUN"
+ print(str.capitalize())
+# o/p:Coding is fun
+
+# 9)center():it center align the string using specified character.
+# syntax:string.center(length,character)
+# parameters:
+# length:length of returnes string
+# character:chracter to fill ,deffault is space.
+ str="banana"
+ print(str.center(10,"0"))
+ # o/p:00banana00
+
+
+# 10) startswith:returns true if the string starts with specified value ,otherwise false.it is case sensative.
+# syntax:string.startswith(value,start,end)
+# parameters:
+# start: index  specifying where to start the search. deffault  value is 0
+# end: length spacifying where to end the search.deffault is length of string.
+
+ str="welcome to python"
+print(str.startswith("welcome"))
+ # # o/p: True
+ print(str.startswith("Welcome"))
+# o/p:False
+ print(str.startswith("welcome to"))
+ # o/p:True
+
+# # 11) endswith:returns true if the string ends with specified value ,otherwise false.it is case sensative
+# # syntax:string.endswith(value,start,end)
+# # parameters:
+# # start: index  specifying where to start the search. deffault  value is 0
+# # end: length spacifying where to end the search.deffault is length of string.
+str="welcome to python"
+print(str.endswith("python"))
+# o/p: True
+print(str.endswith("Python"))
+# o/p:False
+ print(str.endswith("to python"))
+# o/p:True
+
+# 12)isalnum():this method returns true if each  characters in string is either alphabetic or numeric.
+# space or any other special symbol is not alphanumeric.
+ str="pratik1932"
+ print(str.isalnum())
+ # o/p:True
+ str="1234"
+ print(str.isalnum())
+ # o/p:True
+ str="pratik"
+ print(str.isalnum())
+ #  o/p:True
+ str="pratik khaladkar"
+ print(str.isalnum())
+ #  o/p:False
+
+# 13) isalpha:this method returns true if all the characers in strins are alphabets only.
+#  space or any other special symbol is not alphanumeric.
+ str="pratik"
+ print(str.isalpha())
+ # o/p:True
+ str="pratik khaladkar"
+ print(str.isalpha())
+ #o/p:False
+
+# # 14) is printable():this method returns true if all characers in string are peintabele ,otherwise returns false.
+ str="pratik"
+ print(str.isprintable())
+ # o/p:True
+ str='pratik\nkhaladkar'
+ print(str.isprintable())
+# o/p:False
+
+# 15) isspace():this method returns true if all the characters in string are whitespace,otherwise it returns false.
+ str='    '
+ print(str.isspace())
+ # o/p: True
+ str='   i  '
+ print(str.isspace())
+ # o/p:False
+
+# 16) istitle():this method returns true if rach word in string starts with capital letter
+ str="Welcome To Python"
+ print(str.istitle())
+ # o/p:True
+ str="Pratik@gmail.com"
+ print(str.istitle())
+# o/p:False
+
+# 17)replace():this method is used to replace specified phrase in string whith another phrase
+# syntax:string.replace(oldvalue,newvalue,count)
+# parameters:
+# count:A number specifying  how many occurences of the old value you want replace.deffault is all occurences.
+ txt="Mr bean has red car and red house."
+ print(txt.replace("red","orange"))
+ # o/p:Mr bean has orange car and orange house.
+ txt="Mr bean has red car and red house."
+ print(txt.replace("red","blue",1))
+# o/p:Mr bean has blue car and red house.
+
+# 18)rstrip():this method removes any trialing characters.space is the deffault trailing character.
+# syntax: string.rstrip(characters)
+# parameters
+# characters:a set of characters to remove as trailing characters.
+ txt="pratik9999999999"
+ print(txt.rstrip("9"))
+# o/p:pratik
+ txt="pratik       "
+ print(txt.rstrip())
+#o/p:pratik
+ txt="banana,,,,ssqswwwqs"
+ print(txt.rstrip(",qsw"))
+# o/p:banana
+
+# 19)swapcase():this method converts uppercase characters present in string in  lowercase and vice versa.
+ txt="Pratik"
+ print(txt.swapcase())
+# o/p:pRATIK
+
+# 20)casefold():this method converts all the characters in  string in lower case letters.
+ str="HI ,HOW ARE YOU?"
+ print(str.casefold())
+ # o/p:hi ,how are you?
+ str="pratik@2004"
+ print(str.casefold())
+ #o/p:pratik@2004
+
+# 21)expandstabs():this method sets the tab size to the specified number of whitespaces.
+# synatax:string.expandtabs(tabsize)
+# parameters:
+# tabsize:a number specifying tabsize.deffault tabsize is 8.
+ txt="p\ty\tt\th\to\tn"
+ print(txt.expandtabs())
+  # o/p: p       y       t       h       o       n
+ print(txt.expandtabs(2))
+# o/p: p y t h o n
